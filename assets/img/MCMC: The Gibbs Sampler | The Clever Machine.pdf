@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html id="ie7" lang="en">
+<![endif]-->
+<!--[if IE 8]>
+<html id="ie8" lang="en">
+<![endif]-->
+<!--[if (!IE)]><!-->
+<html lang="en"><!--<![endif]--><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/client.js" async="" type="text/javascript"></script><script type="text/javascript" async="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ANOutstreamVideo.js"></script><script src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/AdCallAggregator.html" async=""></script>
+<meta charset="UTF-8">
+<title>MCMC: The Gibbs Sampler | The Clever Machine</title>
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://theclevermachine.wordpress.com/xmlrpc.php">
+<link rel="dns-prefetch" href="https://s2.wp.com/">
+<link rel="dns-prefetch" href="https://s1.wp.com/">
+<link rel="dns-prefetch" href="https://s0.wp.com/">
+<link rel="dns-prefetch" href="https://s.pubmine.com/">
+<link rel="dns-prefetch" href="https://x.bidswitch.net/">
+<link rel="dns-prefetch" href="https://static.criteo.net/">
+<link rel="dns-prefetch" href="https://ib.adnxs.com/">
+<link rel="dns-prefetch" href="https://aax.amazon-adsystem.com/">
+<link rel="dns-prefetch" href="https://bidder.criteo.com/">
+<link rel="dns-prefetch" href="https://cas.criteo.com/">
+<link rel="dns-prefetch" href="https://gum.criteo.com/">
+<link rel="dns-prefetch" href="https://ads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://gads.pubmatic.com/">
+<link rel="dns-prefetch" href="https://tpc.googlesyndication.com/">
+<link rel="dns-prefetch" href="https://ad.doubleclick.net/">
+<link rel="dns-prefetch" href="https://googleads.g.doubleclick.net/">
+<link rel="dns-prefetch" href="https://www.googletagservices.com/">
+<link rel="dns-prefetch" href="https://cdn.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.g.switchadhub.com/">
+<link rel="dns-prefetch" href="https://delivery.swid.switchadhub.com/">
+<link rel="alternate" type="application/rss+xml" title="The Clever Machine » Feed" href="https://theclevermachine.wordpress.com/feed/">
+<link rel="alternate" type="application/rss+xml" title="The Clever Machine » Comments Feed" href="https://theclevermachine.wordpress.com/comments/feed/">
+<link rel="alternate" type="application/rss+xml" title="The Clever Machine » MCMC: The Gibbs&nbsp;Sampler Comments Feed" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/feed/">
+	<script type="text/javascript">
+		/* <![CDATA[ */
+		function addLoadEvent(func) {
+			var oldonload = window.onload;
+			if (typeof window.onload != 'function') {
+				window.onload = func;
+			} else {
+				window.onload = function () {
+					oldonload();
+					func();
+				}
+			}
+		}
+		/* ]]> */
+	</script>
+			<script type="text/javascript">
+			window._wpemojiSettings = {"baseUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/72x72\/","ext":".png","svgUrl":"https:\/\/s0.wp.com\/wp-content\/mu-plugins\/wpcom-smileys\/twemoji\/2\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/s1.wp.com\/wp-includes\/js\/wp-emoji-release.min.js?m=1516999477h&ver=4.9.4"}};
+			!function(a,b,c){function d(a,b){var c=String.fromCharCode;l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,a),0,0);var d=k.toDataURL();l.clearRect(0,0,k.width,k.height),l.fillText(c.apply(this,b),0,0);var e=k.toDataURL();return d===e}function e(a){var b;if(!l||!l.fillText)return!1;switch(l.textBaseline="top",l.font="600 32px Arial",a){case"flag":return!(b=d([55356,56826,55356,56819],[55356,56826,8203,55356,56819]))&&(b=d([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]),!b);case"emoji":return b=d([55357,56692,8205,9792,65039],[55357,56692,8203,9792,65039]),!b}return!1}function f(a){var c=b.createElement("script");c.src=a,c.defer=c.type="text/javascript",b.getElementsByTagName("head")[0].appendChild(c)}var g,h,i,j,k=b.createElement("canvas"),l=k.getContext&&k.getContext("2d");for(j=Array("flag","emoji"),c.supports={everything:!0,everythingExceptFlag:!0},i=0;i<j.length;i++)c.supports[j[i]]=e(j[i]),c.supports.everything=c.supports.everything&&c.supports[j[i]],"flag"!==j[i]&&(c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&c.supports[j[i]]);c.supports.everythingExceptFlag=c.supports.everythingExceptFlag&&!c.supports.flag,c.DOMReady=!1,c.readyCallback=function(){c.DOMReady=!0},c.supports.everything||(h=function(){c.readyCallback()},b.addEventListener?(b.addEventListener("DOMContentLoaded",h,!1),a.addEventListener("load",h,!1)):(a.attachEvent("onload",h),b.attachEvent("onreadystatechange",function(){"complete"===b.readyState&&c.readyCallback()})),g=c.source||{},g.concatemoji?f(g.concatemoji):g.wpemoji&&g.twemoji&&(f(g.twemoji),f(g.wpemoji)))}(window,document,window._wpemojiSettings);
+		</script><script src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/wp-emoji-release.js" type="text/javascript" defer="defer"></script>
+		<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 .07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="all-css-0-1" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a_002.css" type="text/css" media="all">
+<link rel="stylesheet" id="print-css-1-1" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/global-print.css" type="text/css" media="print">
+<link rel="stylesheet" id="all-css-2-1" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a.css" type="text/css" media="all">
+<script type="text/javascript">
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a_003"></script>
+<link rel="stylesheet" id="all-css-0-2" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/style.css" type="text/css" media="all">
+<!--[if lt IE 8]>
+<link rel='stylesheet' id='highlander-comments-ie7-css'  href='https://s1.wp.com/wp-content/mu-plugins/highlander-comments/style-ie7.css?m=1351637563h&#038;ver=20110606' type='text/css' media='all' />
+<![endif]-->
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://theclevermachine.wordpress.com/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://s1.wp.com/wp-includes/wlwmanifest.xml"> 
+<link rel="prev" title="MCMC: Multivariate Distributions, Block-wise, &amp; Component-wise&nbsp;Updates" href="https://theclevermachine.wordpress.com/2012/11/04/mcmc-multivariate-distributions-block-wise-component-wise-updates/">
+<link rel="next" title="MCMC: Hamiltonian Monte Carlo (a.k.a. Hybrid Monte&nbsp;Carlo)" href="https://theclevermachine.wordpress.com/2012/11/18/mcmc-hamiltonian-monte-carlo-a-k-a-hybrid-monte-carlo/">
+<meta name="generator" content="WordPress.com">
+<link rel="canonical" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a.html">
+<link rel="shortlink" href="https://wp.me/p28c2Q-Bw">
+<link rel="alternate" type="application/json+oembed" href="https://public-api.wordpress.com/oembed/?format=json&amp;url=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F&amp;for=wpcom-auto-discovery"><link rel="alternate" type="application/xml+oembed" href="https://public-api.wordpress.com/oembed/?format=xml&amp;url=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F&amp;for=wpcom-auto-discovery">
+<!-- Jetpack Open Graph Tags -->
+<meta property="og:type" content="article">
+<meta property="og:title" content="MCMC: The Gibbs Sampler">
+<meta property="og:url" content="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/">
+<meta property="og:description" content="In the previous post, we compared using block-wise and component-wise implementations of the Metropolis-Hastings algorithm for sampling from a multivariate probability distribution$latex p(\bold x)…">
+<meta property="article:published_time" content="2012-11-05T19:38:44+00:00">
+<meta property="article:modified_time" content="2012-11-06T01:11:02+00:00">
+<meta property="og:site_name" content="The Clever Machine">
+<meta property="og:image" content="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:site" content="@corrcoef">
+<meta name="twitter:text:title" content="MCMC: The Gibbs&nbsp;Sampler">
+<meta name="twitter:image" content="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png?w=240">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@corrcoef">
+<meta property="fb:app_id" content="249643311490">
+<meta property="article:publisher" content="https://www.facebook.com/WordPresscom">
+<link rel="shortcut icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/9537b168cbd2ad1f6cdaf5e0b56dc5e4?s=32" sizes="16x16">
+<link rel="icon" type="image/x-icon" href="https://secure.gravatar.com/blavatar/9537b168cbd2ad1f6cdaf5e0b56dc5e4?s=32" sizes="16x16">
+<link rel="apple-touch-icon-precomposed" href="https://secure.gravatar.com/blavatar/9537b168cbd2ad1f6cdaf5e0b56dc5e4?s=114">
+<link rel="openid.server" href="https://theclevermachine.wordpress.com/?openidserver=1">
+<link rel="openid.delegate" href="https://theclevermachine.wordpress.com/">
+<link rel="search" type="application/opensearchdescription+xml" href="https://theclevermachine.wordpress.com/osd.xml" title="The Clever Machine">
+<link rel="search" type="application/opensearchdescription+xml" href="https://s1.wp.com/opensearch.xml" title="WordPress.com">
+<meta name="theme-color" content="#0a0000">
+	<style type="text/css">
+			#page {
+			background: none;
+		}
+			</style>
+			<style type="text/css">
+			.recentcomments a {
+				display: inline !important;
+				padding: 0 !important;
+				margin: 0 !important;
+			}
+
+			table.recentcommentsavatartop img.avatar, table.recentcommentsavatarend img.avatar {
+				border: 0px;
+				margin: 0;
+			}
+
+			table.recentcommentsavatartop a, table.recentcommentsavatarend a {
+				border: 0px !important;
+				background-color: transparent !important;
+			}
+
+			td.recentcommentsavatarend, td.recentcommentsavatartop {
+				padding: 0px 0px 1px 0px;
+				margin: 0px;
+			}
+
+			td.recentcommentstextend {
+				border: none !important;
+				padding: 0px 0px 2px 10px;
+			}
+
+			.rtl td.recentcommentstextend {
+				padding: 0px 10px 2px 0px;
+			}
+
+			td.recentcommentstexttop {
+				border: none;
+				padding: 0px 0px 0px 10px;
+			}
+
+			.rtl td.recentcommentstexttop {
+				padding: 0px 10px 0px 0px;
+			}
+		</style>
+		<meta name="application-name" content="The Clever Machine"><meta name="msapplication-window" content="width=device-width;height=device-height"><meta name="msapplication-tooltip" content="Topics in Computational Neuroscience &amp; Machine Learning"><meta name="msapplication-task" content="name=Subscribe;action-uri=https://theclevermachine.wordpress.com/feed/;icon-uri=https://secure.gravatar.com/blavatar/9537b168cbd2ad1f6cdaf5e0b56dc5e4?s=16"><meta name="msapplication-task" content="name=Sign up for a free blog;action-uri=http://wordpress.com/signup/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Support;action-uri=http://support.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="msapplication-task" content="name=WordPress.com Forums;action-uri=http://forums.wordpress.com/;icon-uri=https://s2.wp.com/i/favicon.ico"><meta name="title" content="MCMC: The Gibbs&nbsp;Sampler | The Clever Machine on WordPress.com">
+<meta name="description" content="In the previous post, we compared using block-wise and component-wise implementations of the Metropolis-Hastings algorithm for sampling from a multivariate probability distribution$latex p(\bold x)&amp;s=-1$. Component-wise updates for MCMC algorithms are generally more efficient for multivariate problems than blockwise updates in that we are more likely to accept a proposed sample by drawing each component/dimension independently…">
+<style type="text/css" id="custom-background-css">
+body.custom-background { background-color: #0a0000; background-image: url("https://theclevermachine.files.wordpress.com/2013/04/colorfuldots.jpg"); background-position: right top; background-size: auto; background-repeat: no-repeat; background-attachment: fixed; }
+</style>
+		<script type="text/javascript">
+		var __ATA_PP = { pt: 1, ht: 0, tn: 'mystique', amp: false, siteid: 2694 };
+		var __ATA = __ATA || {};
+		__ATA.cmd = __ATA.cmd || [];
+		__ATA.criteo = __ATA.criteo || {};
+		__ATA.criteo.cmd = __ATA.criteo.cmd || [];
+		</script>
+		<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/head.js" async=""></script><link rel="amphtml" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/amp/"><link rel="stylesheet" type="text/css" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/shCore.css"><link rel="stylesheet" type="text/css" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/shThemeDefault.css"><style type="text/css" id="syntaxhighlighteranchor"></style>
+<script type="text/javascript">
+	window.google_analytics_uacct = "UA-52447-2";
+</script>
+
+<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-52447-2']);
+	_gaq.push(['_setDomainName', 'wordpress.com']);
+	_gaq.push(['_initData']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+		var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(ga);
+	})();
+</script><script type="text/javascript" async="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ga.js"></script>
+<script src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/publishertag.js"></script><style type="text/css"></style><link rel="stylesheet" type="text/css" id="gravatar-card-css" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/hovercard.css"><link rel="stylesheet" type="text/css" id="gravatar-card-services-css" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/services.css"><script type="text/javascript" charset="UTF-8" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/publishertag.js"></script><script src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/outstream.js" async=""></script><style type="text/css">.iowo-adv {overflow: hidden;}.iowo-adv__header {font-family: "Helvetica", Arial, sans-serif !important;font-size: 11.5px !important;text-align: center;position: relative;padding: 5px 0px;letter-spacing: 0.3px !important;font-weight: 300 !important;text-transform: uppercase;color: #aaa}.iowo-adv__sound-icon {width: 32px;cursor: pointer;height: 32px;position: absolute;bottom:12px;right:5px;}.iowo-adv__sound-icon_on {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4QYcDigM2jawiwAAAbhJREFUWMPtl7FLHFEQxr+ZtwTytLDwmjSnhf+AYrpUBwGvS7F2YqFNQNjieCnsTlPscdxdZ2MVCORIEewMwf/AlEkRCRaSKqQMCrnbGZtVLPRye2/dJcSpdos33292vjfvLfAQ/3tQHkkajcYqM68YY3bjOD7NsjbwFXfOhSLyDgAPBgMBsJFlPXuK10TkLTNf5ZnKmoM9PvuSqh4w8yOfInjCyhcAHBLRtG8LeQLxJyLyiZkreRg4E0AURTOq+pGZ5/LahsEodwN4A+Dxfc6BUdsw9BF3zkWqOq2q+51O5+ckLWDP4p4R0Wtm/uqcW7wvkXFiVkT6YRiaQgGGw+Gaqn4AAGZeqFarTwsF6PV6F0R0eH3oEFUKBXDO1QBsX70bY74U7YGXAObT5/5dp2QRJuyLyGbmOaCq50Re14XYGPPqb/eDOwGCINhJkkRvHrGqOkNEtXHU2+32Z69JGMfxdwDrt5hrL+1vLpHZA9baLQDvSwNoNptirV0DcFQKQArxx1r7AsBxKQApxO8kSeoi8q0UAADodru/giB4LiI/0pl/UigAALRarTMiWhaRurV25+FX65+LSxNniSadskJNAAAAAElFTkSuQmCC");}.iowo-adv__sound-icon_off {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEwAACxMBAJqcGAAAAdBJREFUWIXt1b9r1GAcx/HP840u94jo6mD/Aae24I9NHZSCi5NDO5TO7fLkCTgdt15y4C6IdHFwEpxscRHc1dHB0UFBOvToks/Xxch53j3JExNB6XcMz+X1Ti5PApzO/zLD4fBMm99JF7hzbm86nZ6kafp02Rrv/apz7mrnAd77LRF5BCBR1fvLcJKHIvIqy7JrnQV47zdIPgFgAEBEfjvfDH4RwHmSW50EZFl2g+RzEfn535P8FsABYN9au/vHAc65K2VZvhSRwQz+JUmSjRA+GAy2R6MRZ89lWuArAN6KyKU5/PZ4PP4QgwNAcOs4524ZYy7/UmzMQwBLcefcGsmDJjgQuAPe+5sAXocCF+EAGuNA4BlQ1ZW+8WDA38BbBXSJRwfU4SSnMThQswvqcBE5BHChWiMiGoMDDe9AE7zt1Ab0idcG9I0HA0i+6xsHGn4LvPfrAA4a4Md5np+LCah9BuZxVX1G8mMM0jpgwZXvW2s3AdwB8LnXgEV49ZKZTCafVPUuyaNeAkJ4taYoivcico/kSacBTfBq8jx/Y4x5AKD8caicXxMdoKpnSSZ1eDVFUbwwxuwA+Kqqj2MDFm7DNE2vA9i01u7GvttP55+b71U6NuXe6u9vAAAAAElFTkSuQmCC");}.iowo-adv__timer {position: absolute;bottom:5px;left:5px;min-width: 60px;padding: 3px;color: #aaaaaa;border-radius: 5px;font-family: sans-serif;text-align: center;background-color:black;z-index:10;}.iowo-timeline {position: absolute;bottom:0;left:0;width: 100%;height: 5px;background-color: rgba(0, 0, 0, 0.2);}.iowo-timeline__runner {position: relative;height: 5px;background-color: red;-moz-transition: .5s;-ms-transition: .5s;-o-transition: .5s;-webkit-transition: .5s;transition: .5s;transition-property: max-width;}</style><script type="text/javascript" charset="UTF-8" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ima3.js"></script><link rel="preload" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/integrator.js" as="script"><script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/integrator.js"></script><iframe src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/showad.html" style="height: 0px; width: 0px; border: 0px none;" marginwidth="0" marginheight="0" scrolling="no" width="0" height="0" frameborder="0"></iframe></head>
+
+<body class="post-template-default single single-post postid-2326 single-format-standard custom-background mp6 customizer-styles-applied no-sidebar highlander-enabled highlander-light">
+<div id="page">
+
+	<div id="container">
+
+		<ul class="skip">
+			<li><a href="#access">Skip to navigation</a></li>
+			<li><a href="#main">Skip to main content</a></li>
+			<li><a href="#sidebar">Skip to primary sidebar</a></li>
+			<li><a href="#sidebar2">Skip to secondary sidebar</a></li>
+			<li><a href="#footer">Skip to footer</a></li>
+		</ul>
+
+		<div id="header">
+			<div id="branding" class="clear-block">
+				<a class="home-link" href="https://theclevermachine.wordpress.com/" title="The Clever Machine" rel="home">
+					<h1 id="logo">The Clever Machine</h1>
+					<h2 id="site-description">Topics in Computational Neuroscience &amp; Machine Learning</h2>
+				</a>
+			</div><!-- #branding-->
+
+			<div id="access" class="clear-block" role="navigation">
+				<false class="menu"><ul>
+<li><a href="https://theclevermachine.wordpress.com/">Home</a></li><li class="page_item page-item-133"><a href="https://theclevermachine.wordpress.com/about-me/">About the Author</a></li>
+<li class="page_item page-item-13"><a href="https://theclevermachine.wordpress.com/about-theclevermachine/">About The Clever&nbsp;Machine</a></li>
+<li class="page_item page-item-3927"><a href="https://theclevermachine.wordpress.com/interact/">Blog Interface</a></li>
+</ul></false>
+
+				<div class="social-icons">
+
+					
+					
+					
+					
+					
+				</div><!-- .social-icons -->
+
+			</div><!-- #access -->
+
+							
+			</div><!-- #header-->
+
+			<div id="main">
+
+ 			<div id="content-container">
+	 			<div id="content">
+					
+						<div class="post-navigation nav-above">
+							<div class="nav-previous">
+								<a href="https://theclevermachine.wordpress.com/2012/11/04/mcmc-multivariate-distributions-block-wise-component-wise-updates/" rel="prev">← MCMC: Multivariate Distributions, Block-wise, &amp; Component-wise&nbsp;Updates</a>							</div>
+							<div class="nav-next">
+								<a href="https://theclevermachine.wordpress.com/2012/11/18/mcmc-hamiltonian-monte-carlo-a-k-a-hybrid-monte-carlo/" rel="next">MCMC: Hamiltonian Monte Carlo (a.k.a. Hybrid Monte&nbsp;Carlo) →</a>							</div>
+						</div><!-- .post-navigation -->
+
+						<div class="post-wrapper clear-block post-2326 post type-post status-publish format-standard hentry category-algorithms category-density-estimation category-sampling category-sampling-methods category-statistics tag-conditional-distribution tag-gibbs-sampler tag-mcmc tag-multivariate-normal">
+
+	
+			<h1 class="single-title">MCMC: The Gibbs&nbsp;Sampler</h1>	
+	<div class="post-date">
+		<p class="day"><a href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/" rel="bookmark" title="Permanent Link to MCMC: The Gibbs&nbsp;Sampler">Nov 5</a></p>
+	</div><!-- .post-date -->
+
+	<div class="post-info clear-block">
+		<p class="author alignleft">Posted by <a href="https://theclevermachine.wordpress.com/author/dustinstansbury/" title="Posts by dustinstansbury" rel="author">dustinstansbury</a></p>
+	</div><!-- .post-info clear-block" -->
+
+	<div class="entry clear-block">
+		<p>In the previous <a title="Multivariate MCMC" href="https://theclevermachine.wordpress.com/2012/11/04/mcmc-multivariate-distributions-block-wise-component-wise-updates/" target="_blank">post,</a>
+ we compared using block-wise and component-wise implementations of the 
+Metropolis-Hastings algorithm for sampling from a multivariate 
+probability distribution<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_002.png" alt="p(\bold x)" title="p(\bold x)" class="latex">.
+ Component-wise updates for MCMC algorithms are generally more efficient
+ for multivariate problems than blockwise updates in that we are more 
+likely to accept a proposed sample by drawing each component/dimension 
+independently of the others. However, samples may still be rejected, 
+leading to excess computation that is never used. The Gibbs sampler, 
+another popular MCMC sampling technique, provides a means of avoiding 
+such wasted computation.&nbsp;Like the component-wise implementation of 
+the Metropolis-Hastings algorithm, the Gibbs sampler also uses 
+component-wise updates. However, unlike in the Metropolis-Hastings 
+algorithm, all proposed samples are accepted, so there is no wasted 
+computation.</p>
+<p>The Gibbs sampler is applicable for certain classes of problems, based on two main criterion. Given a target distribution <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex.png" alt="p(\bold x)" title="p(\bold x)" class="latex">, where <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_021.png" alt="\bold x = (x_1, x_2, \dots, x_D" title="\bold x = (x_1, x_2, \dots, x_D" class="latex">,
+ ), &nbsp;The first criterion is 1) that it is necessary that we have an
+ analytic (mathematical) expression for the conditional distribution of 
+each variable in the joint distribution given all other variables in the
+ joint. Formally, if the target distribution <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex.png" alt="p(\bold x)" title="p(\bold x)" class="latex"> is <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_027.png" alt="D" title="D" class="latex">-dimensional, we must have <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_027.png" alt="D" title="D" class="latex"> individual expressions for</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_012.png" alt="p(x_i|x_1,x_2,\dots,x_{i-1},x_{i+1},\dots,x_D)" title="p(x_i|x_1,x_2,\dots,x_{i-1},x_{i+1},\dots,x_D)" class="latex"></p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_011.png" alt="= p(x_i | x_j), j\neq i " title="= p(x_i | x_j), j\neq i " class="latex">.</p>
+<p>Each of these expressions defines the probability of the <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_005.png" alt="i" title="i" class="latex">-th dimension given that we have values for all other (<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_003.png" alt="j \neq i" title="j \neq i" class="latex">)
+ dimensions. Having the conditional distribution for each variable means
+ that we don’t need a proposal distribution or an accept/reject 
+criterion, like in the Metropolis-Hastings algorithm. Therefore, we can 
+simply sample from each conditional while keeping all other variables 
+held fixed. This leads to the second&nbsp;criterion&nbsp;2) that we must
+ be able to sample from each conditional distribution. This caveat is 
+obvious if we want an implementable algorithm.</p>
+<p>The Gibbs sampler works in much the same way as the component-wise 
+Metropolis-Hastings algorithms except that instead drawing from a 
+proposal distribution for each dimension, then accepting or rejecting 
+the proposed sample, we simply draw a value for that dimension according
+ to the variable’s corresponding conditional distribution. We also 
+accept all values that are drawn. Similar to the component-wise 
+Metropolis-Hastings algorithm, we step through each variable 
+sequentially, sampling it while keeping all other variables fixed. The 
+Gibbs sampling procedure is outlined below</p>
+<ol>
+<li>set <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_007.png" alt="t = 0" title="t = 0" class="latex"></li>
+<li>generate an initial state <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_020.png" alt="\bold x^{(0)} \sim \pi^{(0)}" title="\bold x^{(0)} \sim \pi^{(0)}" class="latex"></li>
+<li>repeat until <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_006.png" alt="t = M" title="t = M" class="latex"></li>
+</ol>
+<p style="padding-left:60px;">set <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_014.png" alt="t = t+1" title="t = t+1" class="latex"></p>
+<p style="padding-left:60px;">for each dimension <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_026.png" alt="i = 1..D" title="i = 1..D" class="latex"></p>
+<p style="padding-left:60px;">draw <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_013.png" alt="x_i" title="x_i" class="latex"> from <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_012.png" alt="p(x_i|x_1,x_2,\dots,x_{i-1},x_{i+1},\dots,x_D)" title="p(x_i|x_1,x_2,\dots,x_{i-1},x_{i+1},\dots,x_D)" class="latex"></p>
+<p>To get a better understanding of the Gibbs sampler at work, let’s 
+implement the Gibbs sampler to solve the same multivariate sampling 
+problem addressed in the previous post.</p>
+<h3>Example: Sampling from a bivariate a Normal distribution</h3>
+<p>This example parallels the examples in the previous post where we 
+sampled from a 2-D Normal distribution using block-wise and 
+component-wise Metropolis-Hastings algorithms. Here, we show how to 
+implement a Gibbs sampler to draw samples from the same target 
+distribution. As a reminder, the target distribution <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_002.png" alt="p(\bold x)" title="p(\bold x)" class="latex"> is a Normal form with following parameterization:</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_032.png" alt="p(\bold x) = \mathcal N (\bold{\mu}, \bold \Sigma)" title="p(\bold x) = \mathcal N (\bold{\mu}, \bold \Sigma)" class="latex"></p>
+<p>with mean</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_031.png" alt="\mu = [\mu_1,\mu_2]= [0, 0]" title="\mu = [\mu_1,\mu_2]= [0, 0]" class="latex"></p>
+<p>and covariance</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_017.png" alt="\bold \Sigma = \begin{bmatrix} 1 &amp; \rho_{12} \\ \rho_{21} &amp; 1\end{bmatrix} = \begin{bmatrix} 1 &amp; 0.8 \\ 0.8 &amp; 1\end{bmatrix}" title="\bold \Sigma = \begin{bmatrix} 1 &amp; \rho_{12} \\ \rho_{21} &amp; 1\end{bmatrix} = \begin{bmatrix} 1 &amp; 0.8 \\ 0.8 &amp; 1\end{bmatrix}" class="latex"></p>
+<p>In order to sample from this distribution using a Gibbs sampler, we 
+need to have in hand the conditional distributions for 
+variables/dimensions <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_029.png" alt="x_1" title="x_1" class="latex"> and <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_030.png" alt="x_2" title="x_2" class="latex">:</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_016.png" alt="p(x_1 | x_2^{(t-1)})" title="p(x_1 | x_2^{(t-1)})" class="latex"> (i.e. the conditional for the first dimension, <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_029.png" alt="x_1" title="x_1" class="latex">)</p>
+<p>and</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_025.png" alt="p(x_2 | x_1^{(t)})" title="p(x_2 | x_1^{(t)})" class="latex"> (the conditional for the second dimension, <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_030.png" alt="x_2" title="x_2" class="latex">)</p>
+<p>Where <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_019.png" alt="x_2^{(t-1)}" title="x_2^{(t-1)}" class="latex"> is the previous state of the second dimension, and <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_009.png" alt="x_1^{(t)}" title="x_1^{(t)}" class="latex"> is the state of the first dimension after drawing from <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_010.png" alt="p(x_1 | x_2^{(t-1)})" title="p(x_1 | x_2^{(t-1)})" class="latex">. The reason for the discrepancy between updating <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_004.png" alt="x_1" title="x_1" class="latex"> and <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_018.png" alt="x_2" title="x_2" class="latex"> using states <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_008.png" alt="(t-1)" title="(t-1)" class="latex"> and <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_024.png" alt="(t)" title="(t)" class="latex">, can be is seen in step 3 of the algorithm outlined in the previous section. At iteration <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_023.png" alt="t" title="t" class="latex"> we first sample a new state for variable <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_004.png" alt="x_1" title="x_1" class="latex"> conditioned on the most recent state of variable <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_018.png" alt="x_2" title="x_2" class="latex">, which is from iteration <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_008.png" alt="(t-1)" title="(t-1)" class="latex">. We then sample a new state for the variable <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_018.png" alt="x_2" title="x_2" class="latex"> conditioned on the most recent state of variable <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_004.png" alt="x_1" title="x_1" class="latex">, which is now from the current iteration, <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_023.png" alt="t" title="t" class="latex">.</p>
+<p>After some math (which which I will skip for some brevity, but see the <a title="Derivation of Multivariate Normal Conditionals" href="http://fourier.eng.hmc.edu/e161/lectures/gaussianprocess/node7.html" target="_blank">following</a> for some details), we find that the two conditional distributions for the target Normal distribution are:</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_028.png" alt="p(x_1 | x_2^{(t-1)}) = \mathcal N(\mu_1 + \rho_{21}(x_2^{(t-1)} - \mu_2),\sqrt{1-\rho_{21}^2})" title="p(x_1 | x_2^{(t-1)}) = \mathcal N(\mu_1 + \rho_{21}(x_2^{(t-1)} - \mu_2),\sqrt{1-\rho_{21}^2})" class="latex"></p>
+<p>and</p>
+<p><img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_022.png" alt="p(x_2 | x_1^{(t)})=\mathcal N(\mu_2 + \rho_{12}(x_1^{(t)}-\mu_1),\sqrt{1-\rho_{12}^2})" title="p(x_2 | x_1^{(t)})=\mathcal N(\mu_2 + \rho_{12}(x_1^{(t)}-\mu_1),\sqrt{1-\rho_{12}^2})" class="latex">,</p>
+<p>which are both univariate Normal distributions, each with a mean that
+ is dependent on the value of the most recent state of the conditioning 
+variable, and a variance that is dependent on the target covariances 
+between the two variables.</p>
+<p>Using the above expressions for the conditional probabilities of variables <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_004.png" alt="x_1" title="x_1" class="latex"> and <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_018.png" alt="x_2" title="x_2" class="latex">, we implement the Gibbs sampler using MATLAB below. The output of the sampler is shown here:</p>
+<div data-shortcode="caption" id="attachment_2487" style="max-width: 520px" class="wp-caption aligncenter"><a href="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png"><img data-attachment-id="2487" data-permalink="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/gibbssampler-2dnormal-2/" data-orig-file="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png?w=914" data-orig-size="512,384" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;}" data-image-title="gibbsSampler-2DNormal" data-image-description="" data-medium-file="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png?w=914?w=300" data-large-file="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png?w=914?w=512" class="size-full wp-image-2487" title="gibbsSampler-2DNormal" alt="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/gibbssampler-2dnormal1.png" srcset="https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png 512w, https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png?w=150 150w, https://theclevermachine.files.wordpress.com/2012/11/gibbssampler-2dnormal1.png?w=300 300w" sizes="(max-width: 512px) 100vw, 512px"></a><p class="wp-caption-text">Gibbs sampler Markov chain and samples for bivariate Normal target distribution</p></div>
+<p>Inspecting the figure above, note how at each iteration the Markov 
+chain for the Gibbs sampler first takes a step only along the <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_004.png" alt="x_1" title="x_1" class="latex"> direction, then only along the <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_018.png" alt="x_2" title="x_2" class="latex">
+ direction. &nbsp;This shows how the Gibbs sampler sequentially samples 
+the value of each variable separately, in a component-wise fashion.</p>
+<div><div id="highlighter_934845" class="syntaxhighlighter  matlabkey"><table cellspacing="0" cellpadding="0" border="0"><tbody><tr><td class="gutter"><div class="line number1 index0 alt2">1</div><div class="line number2 index1 alt1">2</div><div class="line number3 index2 alt2">3</div><div class="line number4 index3 alt1">4</div><div class="line number5 index4 alt2">5</div><div class="line number6 index5 alt1">6</div><div class="line number7 index6 alt2">7</div><div class="line number8 index7 alt1">8</div><div class="line number9 index8 alt2">9</div><div class="line number10 index9 alt1">10</div><div class="line number11 index10 alt2">11</div><div class="line number12 index11 alt1">12</div><div class="line number13 index12 alt2">13</div><div class="line number14 index13 alt1">14</div><div class="line number15 index14 alt2">15</div><div class="line number16 index15 alt1">16</div><div class="line number17 index16 alt2">17</div><div class="line number18 index17 alt1">18</div><div class="line number19 index18 alt2">19</div><div class="line number20 index19 alt1">20</div><div class="line number21 index20 alt2">21</div><div class="line number22 index21 alt1">22</div><div class="line number23 index22 alt2">23</div><div class="line number24 index23 alt1">24</div><div class="line number25 index24 alt2">25</div><div class="line number26 index25 alt1">26</div><div class="line number27 index26 alt2">27</div><div class="line number28 index27 alt1">28</div><div class="line number29 index28 alt2">29</div><div class="line number30 index29 alt1">30</div><div class="line number31 index30 alt2">31</div><div class="line number32 index31 alt1">32</div><div class="line number33 index32 alt2">33</div><div class="line number34 index33 alt1">34</div><div class="line number35 index34 alt2">35</div><div class="line number36 index35 alt1">36</div><div class="line number37 index36 alt2">37</div><div class="line number38 index37 alt1">38</div><div class="line number39 index38 alt2">39</div><div class="line number40 index39 alt1">40</div><div class="line number41 index40 alt2">41</div><div class="line number42 index41 alt1">42</div><div class="line number43 index42 alt2">43</div><div class="line number44 index43 alt1">44</div><div class="line number45 index44 alt2">45</div><div class="line number46 index45 alt1">46</div><div class="line number47 index46 alt2">47</div><div class="line number48 index47 alt1">48</div><div class="line number49 index48 alt2">49</div><div class="line number50 index49 alt1">50</div><div class="line number51 index50 alt2">51</div><div class="line number52 index51 alt1">52</div><div class="line number53 index52 alt2">53</div><div class="line number54 index53 alt1">54</div><div class="line number55 index54 alt2">55</div></td><td class="code"><div class="container"><div class="line number1 index0 alt2"><code class="matlabkey comments">% EXAMPLE: GIBBS SAMPLER FOR BIVARIATE NORMAL</code></div><div class="line number2 index1 alt1"><code class="matlabkey plain">rand(</code><code class="matlabkey string">'seed'</code> <code class="matlabkey plain">,12345);</code></div><div class="line number3 index2 alt2"><code class="matlabkey plain">nSamples = 5000;</code></div><div class="line number4 index3 alt1">&nbsp;</div><div class="line number5 index4 alt2"><code class="matlabkey plain">mu = [0 0]; </code><code class="matlabkey comments">% TARGET MEAN</code></div><div class="line number6 index5 alt1"><code class="matlabkey plain">rho(1) = 0.8; </code><code class="matlabkey comments">% rho_21</code></div><div class="line number7 index6 alt2"><code class="matlabkey plain">rho(2) = 0.8; </code><code class="matlabkey comments">% rho_12</code></div><div class="line number8 index7 alt1">&nbsp;</div><div class="line number9 index8 alt2"><code class="matlabkey comments">% INITIALIZE THE GIBBS SAMPLER</code></div><div class="line number10 index9 alt1"><code class="matlabkey plain">propSigma = 1; </code><code class="matlabkey comments">% PROPOSAL VARIANCE</code></div><div class="line number11 index10 alt2"><code class="matlabkey plain">minn = [-3 -3];</code></div><div class="line number12 index11 alt1"><code class="matlabkey plain">maxx = [3 3];</code></div><div class="line number13 index12 alt2">&nbsp;</div><div class="line number14 index13 alt1"><code class="matlabkey comments">% INITIALIZE SAMPLES</code></div><div class="line number15 index14 alt2"><code class="matlabkey plain">x = zeros(nSamples,2);</code></div><div class="line number16 index15 alt1"><code class="matlabkey plain">x(1,1) = unifrnd(minn(1), maxx(1));</code></div><div class="line number17 index16 alt2"><code class="matlabkey plain">x(1,2) = unifrnd(minn(2), maxx(2));</code></div><div class="line number18 index17 alt1">&nbsp;</div><div class="line number19 index18 alt2"><code class="matlabkey plain">dims = 1:2; </code><code class="matlabkey comments">% INDEX INTO EACH DIMENSION</code></div><div class="line number20 index19 alt1">&nbsp;</div><div class="line number21 index20 alt2"><code class="matlabkey comments">% RUN GIBBS SAMPLER</code></div><div class="line number22 index21 alt1"><code class="matlabkey plain">t = 1;</code></div><div class="line number23 index22 alt2"><code class="matlabkey keyword">while</code> <code class="matlabkey plain">t &lt; nSamples</code></div><div class="line number24 index23 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">t = t + 1;</code></div><div class="line number25 index24 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">T = [t-1,t];</code></div><div class="line number26 index25 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey keyword">for</code> <code class="matlabkey plain">iD = 1:2 </code><code class="matlabkey comments">% LOOP OVER DIMENSIONS</code></div><div class="line number27 index26 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey comments">% UPDATE SAMPLES</code></div><div class="line number28 index27 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">nIx = dims~=iD; </code><code class="matlabkey comments">% *NOT* THE CURRENT DIMENSION</code></div><div class="line number29 index28 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey comments">% CONDITIONAL MEAN</code></div><div class="line number30 index29 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">muCond = mu(iD) + rho(iD)*(x(T(iD),nIx)-mu(nIx));</code></div><div class="line number31 index30 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey comments">% CONDITIONAL VARIANCE</code></div><div class="line number32 index31 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">varCond = sqrt(1-rho(iD)^2);</code></div><div class="line number33 index32 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey comments">% DRAW FROM CONDITIONAL</code></div><div class="line number34 index33 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">x(t,iD) = normrnd(muCond,varCond);</code></div><div class="line number35 index34 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey keyword">end</code></div><div class="line number36 index35 alt1"><code class="matlabkey keyword">end</code></div><div class="line number37 index36 alt2">&nbsp;</div><div class="line number38 index37 alt1"><code class="matlabkey comments">% DISPLAY SAMPLING DYNAMICS</code></div><div class="line number39 index38 alt2"><code class="matlabkey plain">figure;</code></div><div class="line number40 index39 alt1"><code class="matlabkey plain">h1 = scatter(x(:,1),x(:,2),</code><code class="matlabkey string">'r.'</code><code class="matlabkey plain">);</code></div><div class="line number41 index40 alt2">&nbsp;</div><div class="line number42 index41 alt1"><code class="matlabkey comments">% CONDITIONAL STEPS/SAMPLES</code></div><div class="line number43 index42 alt2"><code class="matlabkey plain">hold on;</code></div><div class="line number44 index43 alt1"><code class="matlabkey keyword">for</code> <code class="matlabkey plain">t = 1:50</code></div><div class="line number45 index44 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">plot([x(t,1),x(t+1,1)],[x(t,2),x(t,2)],</code><code class="matlabkey string">'k-'</code><code class="matlabkey plain">);</code></div><div class="line number46 index45 alt1"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">plot([x(t+1,1),x(t+1,1)],[x(t,2),x(t+1,2)],</code><code class="matlabkey string">'k-'</code><code class="matlabkey plain">);</code></div><div class="line number47 index46 alt2"><code class="matlabkey spaces">&nbsp;&nbsp;&nbsp;&nbsp;</code><code class="matlabkey plain">h2 = plot(x(t+1,1),x(t+1,2),</code><code class="matlabkey string">'ko'</code><code class="matlabkey plain">);</code></div><div class="line number48 index47 alt1"><code class="matlabkey keyword">end</code></div><div class="line number49 index48 alt2">&nbsp;</div><div class="line number50 index49 alt1"><code class="matlabkey plain">h3 = scatter(x(1,1),x(1,2),</code><code class="matlabkey string">'go'</code><code class="matlabkey plain">,</code><code class="matlabkey string">'Linewidth'</code><code class="matlabkey plain">,3);</code></div><div class="line number51 index50 alt2"><code class="matlabkey plain">legend([h1,h2,h3],{</code><code class="matlabkey string">'Samples'</code><code class="matlabkey plain">,</code><code class="matlabkey string">'1st 50 Samples'</code><code class="matlabkey plain">,</code><code class="matlabkey string">'x(t=0)'</code><code class="matlabkey plain">},</code><code class="matlabkey string">'Location'</code><code class="matlabkey plain">,</code><code class="matlabkey string">'Northwest'</code><code class="matlabkey plain">)</code></div><div class="line number52 index51 alt1"><code class="matlabkey plain">hold off;</code></div><div class="line number53 index52 alt2"><code class="matlabkey plain">xlabel(</code><code class="matlabkey string">'x_1'</code><code class="matlabkey plain">);</code></div><div class="line number54 index53 alt1"><code class="matlabkey plain">ylabel(</code><code class="matlabkey string">'x_2'</code><code class="matlabkey plain">);</code></div><div class="line number55 index54 alt2"><code class="matlabkey plain">axis square</code></div></div></td></tr></tbody></table></div></div>
+<h2>Wrapping Up</h2>
+<p>The Gibbs sampler is a popular MCMC method for sampling from complex,
+ multivariate probability distributions. However, the Gibbs sampler 
+cannot be used for general sampling problems. For many target 
+distributions, it may difficult or impossible to obtain a closed-form 
+expression for all the needed conditional distributions. In other 
+scenarios, analytic expressions may exist for all conditionals but it 
+may be difficult to sample from any or all of the conditional 
+distributions (in these scenarios it is common to use univariate 
+sampling methods such as rejection sampling and (surprise!) 
+Metropolis-type MCMC techniques to approximate samples from each 
+conditional).&nbsp;Gibbs samplers are very popular for Bayesian methods 
+where models are often devised in such a way that conditional 
+expressions for all model variables are easily obtained and take 
+well-known forms that can be sampled from efficiently.</p>
+<p>Gibbs sampling, like many MCMC techniques suffer from what is often 
+called “slow mixing.” Slow mixing occurs when the underlying Markov 
+chain takes a long time to sufficiently explore the values of <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_015.png" alt="\bold x" title="\bold x" class="latex"> in order to give a good characterization of <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_002.png" alt="p(\bold x)" title="p(\bold x)" class="latex">.
+ Slow mixing is due to a number of factors including the “random walk” 
+nature of the Markov chain, as well as the tendency of the Markov chain 
+to get “stuck,” only sampling a single region of <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_015.png" alt="\bold x" title="\bold x" class="latex"> having high-probability under <img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/latex_002.png" alt="p(\bold x)" title="p(\bold x)" class="latex">.
+ Such behaviors are bad for sampling distributions with multiple modes 
+or heavy tails. More advanced techniques, such as Hybrid Monte Carlo 
+have been developed to incorporate additional dynamics that increase the
+ efficiency of the Markov chain path. We will discuss Hybrid Monte Carlo
+ in a future post.</p>
+<div id="atatags-370373-5a8ef4a399ce5">
+        <script type="text/javascript">
+            __ATA.cmd.push(function() {
+                __ATA.initVideoSlot('atatags-370373-5a8ef4a399ce5', {
+                    sectionId: '370373',
+                    format: 'inread'
+                });
+            });
+        </script>
+    </div><div class="iowo-adv" style="max-height: 539.125px;"><div style="width: 914px;" class="iowo-adv__header"><span>Advertisement</span></div><div style="position: relative; width: 914px; height: 514.125px; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 85px inset;"><div style="position: absolute; width: 914px; height: 514.125px;"><iframe src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/bridge3.html" allowfullscreen="" style="border: 0px none; opacity: 1; margin: 0px; padding: 0px; position: relative;" width="914" height="514.125"></iframe></div><div class="iowo-adv__sound-icon iowo-adv__sound-icon_off"></div><div class="iowo-timeline"><div style="max-width: 7.14467%;" class="iowo-timeline__runner"></div></div></div></div>		<div class="wpcnt">
+			<div class="wpa wpmrec" style="display: inline-block !important;">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">		<div style="padding-bottom:15px;width:300px;height:250px;float:left;margin-right:5px;margin-top:0px">
+		<div id="atatags-26942-5a8ef4a399d4d" style="overflow: hidden; position: relative; width: auto; height: auto;"><div style="width: 300px; height: 250px;"><iframe scrolling="no" style="border:none;overflow:hidden;width:300px;height:250px;" data-integralas-id-ffa0107a-6963-2276-c7f0-1005c556f401="" width="300" height="250" frameborder="0"></iframe><iframe scrolling="no" style="width:0px;height:0px;border:none;" tabindex="-1" width="300" height="250" frameborder="0"></iframe><iframe scrolling="no" style="width:0px;height:0px;border:none;" tabindex="-1" width="300" height="250" frameborder="0"></iframe><iframe scrolling="no" style="width:0px;height:0px;border:none;" tabindex="-1" width="300" height="250" frameborder="0"></iframe></div><div id="atatags-26942-5a8ef4a399d4d__controls" style="width:300px;height:10px;text-align:right;line-height:6px;"><span id="atatags-26942-5a8ef4a399d4d__complain-btn" style="font-size: 10px; color: rgb(109, 171, 210); text-decoration: underline; cursor: pointer; display: inline;">Report this ad</span></div></div></div>		<div style="padding-bottom:15px;width:300px;height:250px;float:left;margin-top:0px">
+		<div id="atatags-114160-5a8ef4a399d83" style="overflow: hidden; position: relative; width: auto; height: auto;"><div style="width: 300px; height: 250px;"><iframe scrolling="no" style="border:none;overflow:hidden;width:300px;height:250px;" width="300" height="250" frameborder="0"></iframe><iframe scrolling="no" style="width:0px;height:0px;border:none;" tabindex="-1" width="300" height="250" frameborder="0"></iframe></div><div id="atatags-114160-5a8ef4a399d83__controls" style="width:300px;height:10px;text-align:right;line-height:6px;"><span id="atatags-114160-5a8ef4a399d83__complain-btn" style="font-size: 10px; color: rgb(109, 171, 210); text-decoration: underline; cursor: pointer; display: inline;">Report this ad</span></div></div></div></div>
+						<div id="crt-1018360861" style="width: 300px; height: 250px; display: none !important;"></div>
+		<script type="text/javascript">
+(function(){var c=function(){var a=document.getElementById("crt-1018360861");window.Criteo?(a.parentNode.style.setProperty("display","inline-block","important"),a.style.setProperty("display","block","important"),window.Criteo.DisplayAcceptableAdIfAdblocked({zoneid:388248,containerid:"crt-1018360861",collapseContainerIfNotAdblocked:!0,callifnotadblocked:function(){a.style.setProperty("display","none","important");a.style.setProperty("visbility","hidden","important")}})):(a.style.setProperty("display","none","important"),a.style.setProperty("visibility","hidden","important"))};if(window.Criteo)c();else{if(!__ATA.criteo.script){var b=document.createElement("script");b.src="//static.criteo.net/js/ld/publishertag.js";b.onload=function(){for(var a=0;a<__ATA.criteo.cmd.length;a++){var b=__ATA.criteo.cmd[a];"function"===typeof b&&b()}};(document.head||document.getElementsByTagName("head")[0]).appendChild(b);__ATA.criteo.script=b}__ATA.criteo.cmd.push(c)}})();
+		</script>		<div id="crt-881413044" style="width: 300px; height: 250px; display: none !important;"></div>
+		<script type="text/javascript">
+(function(){var c=function(){var a=document.getElementById("crt-881413044");window.Criteo?(a.parentNode.style.setProperty("display","inline-block","important"),a.style.setProperty("display","block","important"),window.Criteo.DisplayAcceptableAdIfAdblocked({zoneid:837497,containerid:"crt-881413044",collapseContainerIfNotAdblocked:!0,callifnotadblocked:function(){a.style.setProperty("display","none","important");a.style.setProperty("visbility","hidden","important")}})):(a.style.setProperty("display","none","important"),a.style.setProperty("visibility","hidden","important"))};if(window.Criteo)c();else{if(!__ATA.criteo.script){var b=document.createElement("script");b.src="//static.criteo.net/js/ld/publishertag.js";b.onload=function(){for(var a=0;a<__ATA.criteo.cmd.length;a++){var b=__ATA.criteo.cmd[a];"function"===typeof b&&b()}};(document.head||document.getElementsByTagName("head")[0]).appendChild(b);__ATA.criteo.script=b}__ATA.criteo.cmd.push(c)}})();
+		</script>
+			</div>
+		</div><div id="jp-post-flair" class="sharedaddy sd-like-enabled sd-sharing-enabled"><div class="sharedaddy sd-sharing-enabled"><div class="robots-nocontent sd-block sd-social sd-social-icon-text sd-sharing"><h3 class="sd-title">Share this:</h3><div class="sd-content"><ul><li class="share-twitter"><a rel="nofollow" data-shared="sharing-twitter-2326" class="share-twitter sd-button share-icon" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/?share=twitter&amp;nb=1" target="_blank" title="Click to share on Twitter"><span>Twitter</span></a></li><li class="share-facebook"><a rel="nofollow" data-shared="sharing-facebook-2326" class="share-facebook sd-button share-icon" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/?share=facebook&amp;nb=1" target="_blank" title="Share on Facebook"><span>Facebook<span class="share-count">9</span></span></a></li><li class="share-end"></li></ul></div></div></div><div class="sharedaddy sd-block sd-like jetpack-likes-widget-wrapper jetpack-likes-widget-loaded" id="like-post-wrapper-31505600-2326-5a8ef4a39c2b4" data-src="//widgets.wp.com/likes/index.html?ver=20180221#blog_id=31505600&amp;post_id=2326&amp;origin=theclevermachine.wordpress.com&amp;obj_id=31505600-2326-5a8ef4a39c2b4" data-name="like-post-frame-31505600-2326-5a8ef4a39c2b4"><h3 class="sd-title">Like this:</h3><div class="likes-widget-placeholder post-likes-widget-placeholder" style="height: 55px; display: none;"><span class="button"><span>Like</span></span> <span class="loading">Loading...</span></div><iframe class="post-likes-widget jetpack-likes-widget" name="like-post-frame-31505600-2326-5a8ef4a39c2b4" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/index.html" width="100%" height="55px" frameborder="0"></iframe><span class="sd-text-color"></span><a class="sd-link-color"></a></div>
+<div id="jp-relatedposts" class="jp-relatedposts" style="display: block;">
+	<h3 class="jp-relatedposts-headline"><em>Related</em></h3>
+<div class="jp-relatedposts-items jp-relatedposts-items-minimal"><p class="jp-relatedposts-post jp-relatedposts-post0" data-post-id="2187" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://theclevermachine.wordpress.com/2012/11/04/mcmc-multivariate-distributions-block-wise-component-wise-updates/" title="MCMC: Multivariate Distributions, Block-wise, &amp;amp; Component-wise Updates
+
+In the previous posts on MCMC methods, we focused on how to sample from univariate target distributions. This was done mainly to give the reader some intuition about MCMC implementations with fairly tangible examples that can be visualized. However, MCMC can easily be extended to sample multivariate distributions. In this…" rel="nofollow" data-origin="2326" data-position="0">MCMC: Multivariate Distributions, Block-wise, &amp; Component-wise Updates</a></span><span class="jp-relatedposts-post-context">In "Algorithms"</span></p><p class="jp-relatedposts-post jp-relatedposts-post1" data-post-id="1385" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://theclevermachine.wordpress.com/2012/11/19/a-gentle-introduction-to-markov-chain-monte-carlo-mcmc/" title="A Gentle Introduction to Markov Chain Monte Carlo (MCMC)
+
+Applying probabilistic models to data usually involves integrating a complex, multi-dimensional probability distribution. For example, calculating the expectation/mean of a model distribution involves such an integration. Many (most) times, these integrals are not calculable due to the high dimensionality of the distribution or because there is no closed-form expression for…" rel="nofollow" data-origin="2326" data-position="1">A Gentle Introduction to Markov Chain Monte Carlo (MCMC)</a></span><span class="jp-relatedposts-post-context">In "Algorithms"</span></p><p class="jp-relatedposts-post jp-relatedposts-post2" data-post-id="1280" data-post-format="false"><span class="jp-relatedposts-post-title"><a class="jp-relatedposts-post-a" href="https://theclevermachine.wordpress.com/2012/10/20/mcmc-the-metropolis-hastings-sampler/" title="MCMC: The Metropolis-Hastings Sampler
+
+In an earlier post we discussed how the Metropolis sampling algorithm can draw samples from a complex and/or unnormalized target probability distributions using a Markov chain.&nbsp;The Metropolis algorithm first proposes a possible new state $latex x^*&amp;s=-1$ in the Markov chain, based on a previous state $latex x^{(t-1)}&amp;s=-1$, according to the…" rel="nofollow" data-origin="2326" data-position="2">MCMC: The Metropolis-Hastings Sampler</a></span><span class="jp-relatedposts-post-context">In "Algorithms"</span></p></div></div></div>			</div><!-- .entry -->
+
+	
+			<div id="author-info-box">
+			<div id="author-avatar">
+				<img alt="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/7784f20a8ab6594810a2881feb496570.jpeg" class="avatar avatar-60 grav-hashed grav-hijack" id="grav-7784f20a8ab6594810a2881feb496570-0" width="60" height="60">			</div><!-- #author-avatar -->
+			<div id="author-description">
+				<h2 id="author-info-title">About dustinstansbury</h2>
+				I recently received my PhD from UC Berkeley where I studied computational neuroscience and machine learning.			</div><!-- #author-description -->
+			<div id="author-link">
+				<a href="https://theclevermachine.wordpress.com/author/dustinstansbury/">
+					View all posts by dustinstansbury <span class="meta-nav">»</span>				</a>
+			</div><!-- #author-link -->
+		</div><!-- # author-info-box -->
+	
+</div><!-- .post-wrapper -->
+						<div class="post-utility">
+							<p class="details">
+								Posted on November 5, 2012, in <a href="https://theclevermachine.wordpress.com/category/algorithms/" rel="category tag">Algorithms</a>, <a href="https://theclevermachine.wordpress.com/category/algorithms/density-estimation/" rel="category tag">Density Estimation</a>, <a href="https://theclevermachine.wordpress.com/category/algorithms/sampling/" rel="category tag">Sampling</a>, <a href="https://theclevermachine.wordpress.com/category/sampling-methods/" rel="category tag">Sampling Methods</a>, <a href="https://theclevermachine.wordpress.com/category/statistics/" rel="category tag">Statistics</a> and tagged <a href="https://theclevermachine.wordpress.com/tag/conditional-distribution/" rel="tag">Conditional Distribution</a>, <a href="https://theclevermachine.wordpress.com/tag/gibbs-sampler/" rel="tag">Gibbs Sampler</a>, <a href="https://theclevermachine.wordpress.com/tag/mcmc/" rel="tag">MCMC</a>, <a href="https://theclevermachine.wordpress.com/tag/multivariate-normal/" rel="tag">Multivariate Normal</a>. Bookmark the <a href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/" title="Permalink to MCMC: The Gibbs&nbsp;Sampler" rel="bookmark">permalink</a>.								<a href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/#comments">4 Comments</a>.															</p>
+						</div><!-- .post-utility -->
+
+						<div class="post-navigation nav-below">
+							<div class="nav-previous">
+								<a href="https://theclevermachine.wordpress.com/2012/11/04/mcmc-multivariate-distributions-block-wise-component-wise-updates/" rel="prev">← MCMC: Multivariate Distributions, Block-wise, &amp; Component-wise&nbsp;Updates</a>							</div>
+							<div class="nav-next">
+								<a href="https://theclevermachine.wordpress.com/2012/11/18/mcmc-hamiltonian-monte-carlo-a-k-a-hybrid-monte-carlo/" rel="next">MCMC: Hamiltonian Monte Carlo (a.k.a. Hybrid Monte&nbsp;Carlo) →</a>							</div>
+						</div><!-- .post-navigation -->
+
+					
+<div id="post-extra-content" class="clear-block">
+	
+		<div id="secondary-tabs">
+		<ul class="comment-tabs">
+						<li class="leave-a-comment">
+				<h3 class="comment-tab-title">
+					<a href="#respond" title="Leave a comment"> Leave a comment</a>
+				</h3>
+			</li>
+									<li>
+				<h3 class="comment-tab-title">
+					<a href="#trackbacks">Trackbacks 2</a>
+				</h3>
+			</li>
+									<li>
+				<h3 class="comment-tab-title">
+					<a href="#comments">Comments 2</a>
+				</h3>
+			</li>
+					</ul><!-- .comment-tabs -->
+	</div><!-- #secondary-tabs -->
+
+
+	
+	
+		
+
+		<div id="commentlist">
+
+			<ol id="comments">
+								<li class="comment byuser comment-author-markovmagic even thread-even depth-1 highlander-comment" id="li-comment-95">
+		<div id="comment-95" class="tiptrigger">
+		<div class="comment-head comment-author vcard">
+			<img alt="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/feadeafb334e56e3c33e5f8b80f2bcd7.png" class="avatar avatar-48 grav-hashed grav-hijack" id="grav-feadeafb334e56e3c33e5f8b80f2bcd7-0" width="48" height="48">
+			<cite class="fn"><a href="http://mlmagic.wordpress.com/" rel="external nofollow" class="url">markovmagic</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/#comment-95">
+				August 28, 2013 at 6:21 pm</a>
+								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-head .comment-author .vcard -->
+		
+		<div class="comment-body">
+			<p>Reblogged this on <a href="http://mlmagic.wordpress.com/2013/08/29/mcmc-the-gibbs-sampler/" rel="nofollow">Machine Learning Magic</a> and commented:<br>
+This man is a genius.</p>
+		</div><!-- .comment-body -->
+
+		 <div class="act tip">
+				 		<a rel="nofollow" class="comment-reply-link" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/?replytocom=95#respond" onclick='return addComment.moveForm( "comment-95", "95", "respond", "2326" )' aria-label="Reply to markovmagic">Reply</a>
+								 </div><!-- .act .tip -->
+
+	</div><!-- #comment-## -->
+</li><!-- #comment-## -->
+	<li class="comment byuser comment-author-chjko0206 odd alt thread-odd thread-alt depth-1 highlander-comment" id="li-comment-287">
+		<div id="comment-287" class="tiptrigger">
+		<div class="comment-head comment-author vcard">
+			<img alt="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a0cea82363d38bb4bad73c6973f7b876.png" class="avatar avatar-48 grav-hashed grav-hijack" id="grav-a0cea82363d38bb4bad73c6973f7b876-0" width="48" height="48">
+			<cite class="fn"><a href="http://michaelhjc.wordpress.com/" rel="external nofollow" class="url">chjko0206</a></cite>
+
+			<span class="comment-meta commentmetadata">
+				|
+				<a href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/#comment-287">
+				February 9, 2015 at 12:11 am</a>
+								</span><!-- .comment-meta .commentmetadata -->
+		</div><!-- .comment-head .comment-author .vcard -->
+		
+		<div class="comment-body">
+			<p>Reblogged this on <a href="https://michaelhjc.wordpress.com/2015/02/09/mcmc-the-gibbs-sampler/" rel="nofollow">michaelhjc</a>.</p>
+		</div><!-- .comment-body -->
+
+		 <div class="act tip">
+				 		<a rel="nofollow" class="comment-reply-link" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/?replytocom=287#respond" onclick='return addComment.moveForm( "comment-287", "287", "respond", "2326" )' aria-label="Reply to chjko0206">Reply</a>
+								 </div><!-- .act .tip -->
+
+	</div><!-- #comment-## -->
+</li><!-- #comment-## -->
+						</ol><!-- #comments -->
+
+						<ol id="trackbacks">
+					<li class="post pingback">
+		<p>Pingback: <a href="https://theclevermachine.wordpress.com/2012/11/19/a-gentle-introduction-to-markov-chain-monte-carlo-mcmc/" rel="external nofollow" class="url">A Gentle Introduction to Markov Chain Monte Carlo (MCMC) « The Clever Machine</a></p>
+	</li>
+<!-- #comment-## -->
+	<li class="post pingback">
+		<p>Pingback: <a href="http://victorfang.wordpress.com/2014/04/29/mcmc-the-gibbs-sampler-simple-example-w-matlab-code/" rel="external nofollow" class="url">MCMC: The Gibbs Sampler, simple example w/ Matlab code | Victor Fang's Computing Space</a></p>
+	</li>
+<!-- #comment-## -->
+			</ol><!-- #trackbacks -->
+			
+			
+		</div><!-- #comment-list -->
+
+	
+		<div id="respond" class="comment-respond js">
+		<h3 id="reply-title" class="comment-reply-title">Leave a Reply <small><a rel="nofollow" id="cancel-comment-reply-link" href="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/#respond" style="display:none;">Cancel reply</a></small></h3>			<form action="https://theclevermachine.wordpress.com/wp-comments-post.php" method="post" id="commentform" class="comment-form">
+				<input id="highlander_comment_nonce" name="highlander_comment_nonce" value="1c5055d017" type="hidden"><input name="_wp_http_referer" value="/2012/11/05/mcmc-the-gibbs-sampler/" type="hidden">
+<input name="hc_post_as" id="hc_post_as" value="guest" type="hidden">
+
+<div class="comment-form-field comment-textarea">
+	
+	<div id="comment-form-comment"><textarea tabindex="-1" style="position: absolute; top: -999px; left: 0px; right: auto; bottom: auto; border: 0px none; padding: 0px; box-sizing: content-box; overflow-wrap: break-word; height: 0px !important; min-height: 0px !important; overflow: hidden; transition: none 0s ease 0s; font-family: Arial, Helvetica, Tahoma, Verdana, sans-serif; font-size: 14px; font-weight: 400; font-style: normal; letter-spacing: 0px; text-transform: none; text-decoration: none; word-spacing: 0px; text-indent: 0px; line-height: 16px; width: 892px;" class="autosizejs ">Enter your comment here...</textarea><textarea id="comment" name="comment" title="Enter your comment here..." placeholder="Enter your comment here..." style="height: 36px; overflow: hidden; overflow-wrap: break-word; resize: none;"></textarea></div>
+</div>
+
+<div id="comment-form-identity" style="display: none;">
+
+	<div id="comment-form-nascar">
+		<p>Fill in your details below or click an icon to log in:</p>
+		<ul>
+			<li class="selected" style="display:none;">
+				<a href="#comment-form-guest" id="postas-guest" title="Guest">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:WordPress.com" id="postas-wordpress" title="WordPress.com">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Twitter" id="postas-twitter" title="Twitter">
+					<span></span>
+				</a>
+			</li>
+			<li>
+				<a href="#comment-form-load-service:Facebook" id="postas-facebook" title="Facebook">
+					<span></span>
+				</a>
+			</li>
+			<li>
+			<iframe id="googleplus-sign-in" name="googleplus-sign-in" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a_007.html" scrolling="no" allowtransparency="true" seamless="seamless" width="24" height="24" frameborder="0"></iframe>
+			</li>
+		</ul>
+	</div>
+
+	<div id="comment-form-guest" class="comment-form-service selected">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+<a href="https://gravatar.com/site/signup/" target="_blank">				<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Gravatar" class="no-grav" width="25">
+</a>			</div>
+
+				<div class="comment-form-fields">
+				<div class="comment-form-field comment-form-email">
+					<label for="email">Email <span class="required">(required)</span> <span class="nopublish">(Address never made public)</span></label>
+					<div class="comment-form-input"><input id="email" name="email" type="email"></div>
+				</div>
+				<div class="comment-form-field comment-form-author">
+					<label for="author">Name <span class="required">(required)</span></label>
+					<div class="comment-form-input"><input id="author" name="author" type="text"></div>
+				</div>
+				<div class="comment-form-field comment-form-url">
+					<label for="url">Website</label>
+					<div class="comment-form-input"><input id="url" name="url" type="url"></div>
+				</div>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-wordpress" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ad516503a11cd5ca435acc9bb6523536.png" alt="WordPress.com Logo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="wp_avatar" id="wordpress-avatar" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_user_id" id="wordpress-user_id" class="comment-meta-wordpress" value="" type="hidden">
+				<input name="wp_access_token" id="wordpress-access_token" class="comment-meta-wordpress" value="" type="hidden">
+				<p class="comment-form-posting-as pa-wordpress"><strong></strong> You are commenting using your WordPress.com account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'wordpress'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-twitter" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Twitter picture" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="twitter_avatar" id="twitter-avatar" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_user_id" id="twitter-user_id" class="comment-meta-twitter" value="" type="hidden">
+				<input name="twitter_access_token" id="twitter-access_token" class="comment-meta-twitter" value="" type="hidden">
+				<p class="comment-form-posting-as pa-twitter"><strong></strong> You are commenting using your Twitter account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'twitter'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-facebook" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Facebook photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="fb_avatar" id="facebook-avatar" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_user_id" id="facebook-user_id" class="comment-meta-facebook" value="" type="hidden">
+				<input name="fb_access_token" id="facebook-access_token" class="comment-meta-facebook" value="" type="hidden">
+				<p class="comment-form-posting-as pa-facebook"><strong></strong> You are commenting using your Facebook account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'facebook'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+	<div id="comment-form-googleplus" class="comment-form-service">
+		<div class="comment-form-padder">
+			<div class="comment-form-avatar">
+				<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/ad516503a11cd5ca435acc9bb6523536.png" alt="Google+ photo" class="no-grav" width="25">
+			</div>
+
+				<div class="comment-form-fields">
+				<input name="googleplus_avatar" id="googleplus-avatar" class="comment-meta-googleplus" value="" type="hidden">
+				<input name="googleplus_user_id" id="googleplus-user_id" class="comment-meta-googleplus" value="" type="hidden">
+				<input name="googleplus_access_token" id="googleplus-access_token" class="comment-meta-googleplus" value="" type="hidden">
+				<p class="comment-form-posting-as pa-googleplus"><strong></strong> You are commenting using your Google+ account. <span class="comment-form-log-out">(&nbsp;<a href="javascript:HighlanderComments.doExternalLogout(%20'googleplus'%20);">Log&nbsp;Out</a>&nbsp;/&nbsp;<a href="#" onclick="javascript:HighlanderComments.switchAccount();return false;">Change</a>&nbsp;)</span></p>
+			</div>
+	
+		</div>
+	</div>
+
+
+	<div id="comment-form-load-service" class="comment-form-service">
+		<div class="comment-form-posting-as-cancel"><a href="javascript:HighlanderComments.cancelExternalWindow();">Cancel</a></div>
+		<p>Connecting to %s</p>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+var highlander_expando_javascript = function(){
+	var input = document.createElement( 'input' ),
+	    comment = jQuery( '#comment' );
+
+	if ( 'placeholder' in input ) {
+		comment.attr( 'placeholder', jQuery( '.comment-textarea label' ).remove().text() );
+	}
+
+	// Expando Mode: start small, then auto-resize on first click + text length
+	jQuery( '#comment-form-identity' ).hide();
+	jQuery( '#comment-form-subscribe' ).hide();
+	jQuery( '#commentform .form-submit' ).hide();
+
+	comment.css( { 'height':'10px' } ).one( 'focus', function() {
+		var timer = setInterval( HighlanderComments.resizeCallback, 10 )
+		jQuery( this ).animate( { 'height': HighlanderComments.initialHeight } ).delay( 100 ).queue( function(n) { clearInterval( timer ); HighlanderComments.resizeCallback(); n(); } );
+		jQuery( '#comment-form-identity' ).slideDown();
+		jQuery( '#comment-form-subscribe' ).slideDown();
+		jQuery( '#commentform .form-submit' ).slideDown();
+	});
+}
+jQuery(document).ready( highlander_expando_javascript );
+</script>
+
+<div id="comment-form-subscribe" style="display: none;">
+	<p class="comment-subscription-form"><input name="subscribe" id="subscribe" value="subscribe" style="width: auto;" type="checkbox"> <label class="subscribe-label" id="subscribe-label" for="subscribe" style="display: inline;">Notify me of new comments via email.</label></p></div>
+
+
+
+
+<p class="form-submit" style="display: none;"><input name="submit" id="comment-submit" class="submit" value="Post Comment" type="submit"> <input name="comment_post_ID" value="2326" id="comment_post_ID" type="hidden">
+<input name="comment_parent" id="comment_parent" value="0" type="hidden">
+</p><p style="display: none;"><input id="akismet_comment_nonce" name="akismet_comment_nonce" value="89bdadeacf" type="hidden"></p>
+<input name="genseq" value="1519318179" type="hidden">
+<p style="display: none;"></p>			<input id="ak_js" name="ak_js" value="1519318180055" type="hidden"></form>
+			</div><!-- #respond -->
+	<div style="clear: both"></div>
+</div><!-- #post-extra-content -->
+									</div><!-- #content -->
+			</div><!-- #content-container -->
+
+
+	<div id="sidebar" class="widget-area" role="complementary">
+				<ul class="xoxo">
+
+		<li id="search-2" class="widget widget_search">
+<form method="get" id="searchform" action="https://theclevermachine.wordpress.com/">
+	<div id="searchfield">
+		<label for="s" class="screen-reader-text">Search for:</label>
+		<input name="s" id="s" class="searchtext" type="text">
+		<input value="Go" class="searchbutton" type="submit">
+	</div>
+</form></li><li id="blog_subscription-2" class="widget widget_blog_subscription"><h3 class="widget-title"><span><label for="subscribe-field">Follow TheCleverMachine</label></span></h3>
+				<form action="https://subscribe.wordpress.com" method="post" accept-charset="utf-8" id="subscribe-blog">
+											<p>To receive update notifications, enter your email here</p>
+						<p><input name="email" style="width: 95%; padding: 1px 2px" placeholder="Enter your email address" id="subscribe-field" type="text"></p>
+					
+					<p>
+						<input name="action" value="subscribe" type="hidden">
+						<input name="blog_id" value="31505600" type="hidden">
+						<input name="source" value="https://theclevermachine.wordpress.com/2012/11/05/mcmc-the-gibbs-sampler/" type="hidden">
+						<input name="sub-type" value="widget" type="hidden">
+						<input name="redirect_fragment" value="blog_subscription-2" type="hidden">
+						<input id="_wpnonce" name="_wpnonce" value="8ef943a49b" type="hidden">						<input value="Follow" type="submit">
+					</p>
+				</form>
+			
+</li><li id="tag_cloud-2" class="widget widget_tag_cloud"><h3 class="widget-title"><span>Categories</span></h3><div style="overflow: hidden;"><a href="https://theclevermachine.wordpress.com/category/algorithms/" style="font-size: 160.29411764706%; padding: 1px; margin: 1px;" title="Algorithms (8)">Algorithms</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/classification/" style="font-size: 102.94117647059%; padding: 1px; margin: 1px;" title="Classification (3)">Classification</a> <a href="https://theclevermachine.wordpress.com/category/data-preprocessing/" style="font-size: 80%; padding: 1px; margin: 1px;" title="Data Preprocessing (1)">Data Preprocessing</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/density-estimation/" style="font-size: 125.88235294118%; padding: 1px; margin: 1px;" title="Density Estimation (5)">Density Estimation</a> <a href="https://theclevermachine.wordpress.com/category/derivations/" style="font-size: 137.35294117647%; padding: 1px; margin: 1px;" title="Derivations (6)">Derivations</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/feature-learning/" style="font-size: 80%; padding: 1px; margin: 1px;" title="Feature Learning (1)">Feature Learning</a> <a href="https://theclevermachine.wordpress.com/category/fmri/" style="font-size: 114.41176470588%; padding: 1px; margin: 1px;" title="fMRI (4)">fMRI</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/gradient-descent/" style="font-size: 102.94117647059%; padding: 1px; margin: 1px;" title="Gradient Descent (3)">Gradient Descent</a> <a href="https://theclevermachine.wordpress.com/category/tips-tricks/latex/" style="font-size: 80%; padding: 1px; margin: 1px;" title="LaTeX (1)">LaTeX</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/machine-learning/" style="font-size: 114.41176470588%; padding: 1px; margin: 1px;" title="Machine Learning (4)">Machine Learning</a> <a href="https://theclevermachine.wordpress.com/category/tips-tricks/matlab/" style="font-size: 80%; padding: 1px; margin: 1px;" title="MATLAB (1)">MATLAB</a> <a href="https://theclevermachine.wordpress.com/category/maximum-likelihood/" style="font-size: 80%; padding: 1px; margin: 1px;" title="Maximum Likelihood (1)">Maximum Likelihood</a> <a href="https://theclevermachine.wordpress.com/category/mcmc/" style="font-size: 91.470588235294%; padding: 1px; margin: 1px;" title="MCMC (2)">MCMC</a> <a href="https://theclevermachine.wordpress.com/category/neural-networks/" style="font-size: 114.41176470588%; padding: 1px; margin: 1px;" title="Neural Networks (4)">Neural Networks</a> <a href="https://theclevermachine.wordpress.com/category/neuroscience/" style="font-size: 114.41176470588%; padding: 1px; margin: 1px;" title="Neuroscience (4)">Neuroscience</a> <a href="https://theclevermachine.wordpress.com/category/optimization/" style="font-size: 91.470588235294%; padding: 1px; margin: 1px;" title="Optimization (2)">Optimization</a> <a href="https://theclevermachine.wordpress.com/category/proofs/" style="font-size: 80%; padding: 1px; margin: 1px;" title="Proofs (1)">Proofs</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/regression/" style="font-size: 183.23529411765%; padding: 1px; margin: 1px;" title="Regression (10)">Regression</a> <a href="https://theclevermachine.wordpress.com/category/algorithms/sampling/" style="font-size: 102.94117647059%; padding: 1px; margin: 1px;" title="Sampling (3)">Sampling</a> <a href="https://theclevermachine.wordpress.com/category/sampling-methods/" style="font-size: 183.23529411765%; padding: 1px; margin: 1px;" title="Sampling Methods (10)">Sampling Methods</a> <a href="https://theclevermachine.wordpress.com/category/simulations/" style="font-size: 183.23529411765%; padding: 1px; margin: 1px;" title="Simulations (10)">Simulations</a> <a href="https://theclevermachine.wordpress.com/category/statistics/" style="font-size: 275%; padding: 1px; margin: 1px;" title="Statistics (18)">Statistics</a> <a href="https://theclevermachine.wordpress.com/category/theory/" style="font-size: 114.41176470588%; padding: 1px; margin: 1px;" title="Theory (4)">Theory</a> <a href="https://theclevermachine.wordpress.com/category/tips-tricks/" style="font-size: 80%; padding: 1px; margin: 1px;" title="Tips &amp; Tricks (1)">Tips &amp; Tricks</a> <a href="https://theclevermachine.wordpress.com/category/uncategorized/" style="font-size: 91.470588235294%; padding: 1px; margin: 1px;" title="Uncategorized (2)">Uncategorized</a> </div></li>		<li id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widget-title"><span>Recent Posts</span></h3>		<ul>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2014/09/23/derivation-maximum-likelihood-for-boltzmann-machines/">Derivation: Maximum Likelihood for Boltzmann&nbsp;Machines</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2014/09/11/a-gentle-introduction-to-artificial-neural-networks/">A Gentle Introduction to Artificial Neural&nbsp;Networks</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2014/09/08/derivation-derivatives-for-common-neural-network-activation-functions/">Derivation: Derivatives for Common Neural Network Activation&nbsp;Functions</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2014/09/06/derivation-error-backpropagation-gradient-descent-for-neural-networks/">Derivation: Error Backpropagation &amp; Gradient Descent for Neural&nbsp;Networks</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2013/04/21/model-selection-underfitting-overfitting-and-the-bias-variance-tradeoff/">Model Selection: Underfitting, Overfitting, and the Bias-Variance&nbsp;Tradeoff</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2013/04/21/supplemental-proof-1/">Supplemental Proof 1</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2013/03/30/the-statistical-whitening-transform/">The Statistical Whitening&nbsp;Transform</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2013/03/29/covariance-matrices-and-data-distributions/">Covariance Matrices and Data&nbsp;Distributions</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2013/01/14/fmri-in-neuroscience-efficiency-of-event-related-experiment-designs/">fMRI In Neuroscience: Efficiency of Event-related Experiment&nbsp;Designs</a>
+									</li>
+											<li>
+					<a href="https://theclevermachine.wordpress.com/2013/01/14/derivation-the-covariance-matrix-of-an-ols-estimator-and-applications-to-gls/">Derivation: The Covariance Matrix of an OLS Estimator (and applications to&nbsp;GLS)</a>
+									</li>
+					</ul>
+		</li><li id="archives-2" class="widget widget_archive"><h3 class="widget-title"><span>Archives</span></h3>		<ul>
+			<li><a href="https://theclevermachine.wordpress.com/2014/09/">September 2014</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2013/04/">April 2013</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2013/03/">March 2013</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2013/01/">January 2013</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/12/">December 2012</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/11/">November 2012</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/10/">October 2012</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/09/">September 2012</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/03/">March 2012</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/02/">February 2012</a></li>
+	<li><a href="https://theclevermachine.wordpress.com/2012/01/">January 2012</a></li>
+		</ul>
+		</li><li id="meta-2" class="widget widget_meta"><h3 class="widget-title"><span>Meta</span></h3>			<ul>
+			<li><a href="https://wordpress.com/start?ref=wplogin">Register</a></li>			<li><a href="https://theclevermachine.wordpress.com/wp-login.php">Log in</a></li>
+			<li><a href="https://theclevermachine.wordpress.com/feed/">Entries <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://theclevermachine.wordpress.com/comments/feed/">Comments <abbr title="Really Simple Syndication">RSS</abbr></a></li>
+			<li><a href="https://wordpress.com/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress.com</a></li>			</ul>
+			</li>		<div class="wpcnt">
+			<div class="wpa wpmrec" style="display: inline-block !important;">
+				<span class="wpa-about">Advertisements</span>
+				<div class="u">
+							<div style="padding-bottom:15px;width:300px;height:250px;">
+		<div id="atatags-286348-5a8ef4a3a69ae" style="width:0px;height:0px;overflow:hidden;position:relative;"><div style="width: 300px; height: 250px;"><iframe scrolling="no" style="border:none;overflow:hidden;width:300px;height:250px;" width="300" height="250" frameborder="0"></iframe><iframe scrolling="no" style="width:0px;height:0px;border:none;" tabindex="-1" width="300" height="250" frameborder="0"></iframe></div><div id="atatags-286348-5a8ef4a3a69ae__controls" style="width:300px;height:10px;text-align:right;line-height:6px;"><span id="atatags-286348-5a8ef4a3a69ae__complain-btn" style="font-size: 10px; color: rgb(109, 171, 210); text-decoration: underline; cursor: pointer; display: inline;">Report this ad</span></div></div></div>
+				</div>
+						<div id="crt-777878758" style="width: 300px; height: 250px; display: block !important;"></div>
+		<script type="text/javascript">
+(function(){var c=function(){var 
+a=document.getElementById("crt-777878758");window.Criteo?(a.parentNode.style.setProperty("display","inline-block","important"),a.style.setProperty("display","block","important"),window.Criteo.DisplayAcceptableAdIfAdblocked({zoneid:388248,containerid:"crt-777878758",collapseContainerIfNotAdblocked:!0,callifnotadblocked:function(){a.style.setProperty("display","none","important");a.style.setProperty("visbility","hidden","important")}})):(a.style.setProperty("display","none","important"),a.style.setProperty("visibility","hidden","important"))};if(window.Criteo)c();else{if(!__ATA.criteo.script){var
+ 
+b=document.createElement("script");b.src="//static.criteo.net/js/ld/publishertag.js";b.onload=function(){for(var
+ a=0;a<__ATA.criteo.cmd.length;a++){var 
+b=__ATA.criteo.cmd[a];"function"===typeof 
+b&&b()}};(document.head||document.getElementsByTagName("head")[0]).appendChild(b);__ATA.criteo.script=b}__ATA.criteo.cmd.push(c)}})();
+
+		</script>
+			</div>
+		</div>
+		</ul>
+	</div><!-- #sidebar .widget-area -->
+
+	
+</div><!-- #main -->
+
+		<div id="footer" role="contentinfo">
+			
+				<div id="copyright">
+					<p>
+	 					<a href="https://wordpress.com/?ref=footer_website">Create a free website or blog at WordPress.com.</a>
+											</p>
+				</div><!-- #copyright -->
+			</div><!-- #footer -->
+	</div><!-- #container -->
+</div><!-- #page -->
+
+<!--  -->
+<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/gprofiles.js"></script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var WPGroHo = {"my_hash":""};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/wpgroho.js"></script>
+
+	<script>
+		//initialize and attach hovercards to all gravatars
+		jQuery( document ).ready( function( $ ) {
+
+			if (typeof Gravatar === "undefined"){
+				return;
+			}
+
+			if ( typeof Gravatar.init !== "function" ) {
+				return;
+			}			
+
+			Gravatar.profile_cb = function( hash, id ) {
+				WPGroHo.syncProfileData( hash, id );
+			};
+			Gravatar.my_hash = WPGroHo.my_hash;
+			Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+		});
+	</script>
+
+		<div style="display:none">
+	<div class="grofile-hash-map-7784f20a8ab6594810a2881feb496570">
+	</div>
+	<div class="grofile-hash-map-feadeafb334e56e3c33e5f8b80f2bcd7">
+	</div>
+	<div class="grofile-hash-map-a0cea82363d38bb4bad73c6973f7b876">
+	</div>
+	</div>
+<script type="text/javascript">
+/* <![CDATA[ */
+var HighlanderComments = {"loggingInText":"Logging 
+In\u2026","submittingText":"Posting 
+Comment\u2026","postCommentText":"Post 
+Comment","connectingToText":"Connecting to %s","commentingAsText":"%1$s:
+ You are commenting using your %2$s account.","logoutText":"Log 
+Out","loginText":"Log 
+In","connectURL":"https:\/\/theclevermachine.wordpress.com\/public.api\/connect\/?action=request","logoutURL":"https:\/\/theclevermachine.wordpress.com\/wp-login.php?action=logout&_wpnonce=d5647605e7","homeURL":"https:\/\/theclevermachine.wordpress.com\/","postID":"2326","gravDefault":"identicon","enterACommentError":"Please
+ enter a comment","enterEmailError":"Please enter your email address 
+here","invalidEmailError":"Invalid email 
+address","enterAuthorError":"Please enter your name 
+here","gravatarFromEmail":"This picture will show whenever you leave a 
+comment. Click to customize it.","logInToExternalAccount":"Log in to use
+ details from one of these 
+accounts.","change":"Change","changeAccount":"Change 
+Account","comment_registration":"0","userIsLoggedIn":"","isJetpack":"","text_direction":"ltr"};
+/*
+ ]]> */
+</script>
+<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a_004"></script>
+
+	<div id="carousel-reblog-box">
+		<form action="#" name="carousel-reblog">
+			<textarea id="carousel-reblog-content" name="carousel-reblog-content" placeholder="Add your thoughts here... (optional)"></textarea>
+			<label for="carousel-reblog-to-blog-id" id="carousel-reblog-lblogid">Post to</label>
+			<select name="carousel-reblog-to-blog-id" id="carousel-reblog-to-blog-id">
+						</select>
+
+			<div class="submit">
+				<span class="canceltext"><a href="#" class="cancel">Cancel</a></span>
+				<input name="carousel-reblog-submit" class="button" id="carousel-reblog-submit" value="Reblog Post" type="submit">
+				<input id="carousel-reblog-blog-id" value="31505600" type="hidden">
+				<input id="carousel-reblog-blog-url" value="https://theclevermachine.wordpress.com" type="hidden">
+				<input id="carousel-reblog-blog-title" value="The Clever Machine" type="hidden">
+				<input id="carousel-reblog-post-url" value="" type="hidden">
+				<input id="carousel-reblog-post-title" value="" type="hidden">
+			</div>
+
+			<input id="_wpnonce" name="_wpnonce" value="ae4e4d3621" type="hidden"><input name="_wp_http_referer" value="/2012/11/05/mcmc-the-gibbs-sampler/" type="hidden">		</form>
+
+		<div class="arrow"></div>
+	</div>
+
+	<script type="text/javascript">
+		window.WPCOM_sharing_counts = {"https:\/\/theclevermachine.wordpress.com\/2012\/11\/05\/mcmc-the-gibbs-sampler\/":2326};
+	</script>
+		<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-twitter' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomtwitter', 'menubar=1,resizable=1,width=600,height=350' );
+				return false;
+			});
+		});
+		</script>
+				<script type="text/javascript">
+			var windowOpen;
+		jQuery(document).on( 'ready post-load', function(){
+			jQuery( 'a.share-facebook' ).on( 'click', function() {
+				if ( 'undefined' !== typeof windowOpen ){ // If there's another sharing window open, close it.
+					windowOpen.close();
+				}
+				windowOpen = window.open( jQuery(this).attr( 'href' ), 'wpcomfacebook', 'menubar=1,resizable=1,width=600,height=400' );
+				return false;
+			});
+		});
+		</script>
+		<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a_002"></script>
+<script type="text/javascript">
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = 
+"https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shCore.css?ver=3.0.9b";
+
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, 
+document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = 
+"https://s0.wp.com/wp-content/plugins/syntaxhighlighter/syntaxhighlighter3/styles/shThemeDefault.css?m=1363304414h&amp;ver=3.0.9b";
+
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		
+//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+
+		document.getElementsByTagName("head")[0].insertBefore( themecss, 
+document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.strings.expandSource = '+ expand source';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t 
+configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.defaults['toolbar'] = false;
+	SyntaxHighlighter.all();
+
+// Infinite scroll support
+jQuery( function( $ ) {
+	$( document.body ).on( 'post-load', function() {
+		SyntaxHighlighter.highlight();
+	} );
+} );
+</script>
+<link rel="stylesheet" id="all-css-0-3" href="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/jetpack-carousel.css" type="text/css" media="all">
+<!--[if lte IE 8]>
+<link rel='stylesheet' id='jetpack-carousel-ie8fix-css'  href='https://s1.wp.com/wp-content/mu-plugins/carousel/jetpack-carousel-ie8fix.css?m=1412618825h&#038;ver=20121024' type='text/css' media='all' />
+<![endif]-->
+<script type="text/javascript">
+/* <![CDATA[ */
+var actionbardata = {"siteID":"31505600","siteName":"The Clever 
+Machine","siteURL":"http:\/\/theclevermachine.wordpress.com","icon":"<img
+ alt='' 
+src='https:\/\/secure.gravatar.com\/blavatar\/9537b168cbd2ad1f6cdaf5e0b56dc5e4?s=50&d=https%3A%2F%2Fs1.wp.com%2Fi%2Flogo%2Fwpcom-gray-white.png'
+ class='avatar avatar-50' height='50' width='50' 
+\/>","canManageOptions":"","canCustomizeSite":"","isFollowing":"","themeSlug":"pub\/mystique","signupURL":"https:\/\/wordpress.com\/start\/","loginURL":"https:\/\/theclevermachine.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F","themeURL":"","xhrURL":"https:\/\/theclevermachine.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"d132705c06","isSingular":"1","isFolded":"","isLoggedIn":"","isMobile":"","subscribeNonce":"<input
+ type=\"hidden\" id=\"_wpnonce\" name=\"_wpnonce\" value=\"8ef943a49b\" 
+\/>","referer":"https:\/\/theclevermachine.wordpress.com\/2012\/11\/05\/mcmc-the-gibbs-sampler\/","canFollow":"1","feedID":"4535288","statusMessage":"","customizeLink":"https:\/\/theclevermachine.wordpress.com\/wp-admin\/customize.php?url=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F","postID":"2326","shortlink":"https:\/\/wp.me\/p28c2Q-Bw","canEditPost":"","editLink":"https:\/\/wordpress.com\/post\/theclevermachine.wordpress.com\/2326","statsLink":"https:\/\/wordpress.com\/stats\/post\/2326\/theclevermachine.wordpress.com","i18n":{"view":"View
+ 
+site","follow":"Follow","following":"Following","edit":"Edit","login":"Log
+ in","signup":"Sign up","customize":"Customize","report":"Report this 
+content","themeInfo":"Get theme: Mystique","shortlink":"Copy 
+shortlink","copied":"Copied","followedText":"New posts from this site 
+will now appear in your <a 
+href=\"https:\/\/wordpress.com\/\">Reader<\/a>","foldBar":"Collapse this
+ bar","unfoldBar":"Expand this bar","editSubs":"Manage 
+subscriptions","viewReader":"View site in Reader","viewReadPost":"View 
+post in Reader","subscribe":"Sign me up","enterEmail":"Enter your email 
+address","followers":"Join 738 other followers","alreadyUser":"Already 
+have a WordPress.com account? <a 
+href=\"https:\/\/theclevermachine.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F\">Log
+ in now.<\/a>","stats":"Stats"}};
+/* ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var jetpackCarouselStrings = 
+{"widths":[370,700,1000,1200,1400,2000],"is_logged_in":"","lang":"en","ajaxurl":"https:\/\/theclevermachine.wordpress.com\/wp-admin\/admin-ajax.php","nonce":"4b01b990e8","display_exif":"1","display_geo":"1","single_image_gallery":"1","single_image_gallery_media_file":"","background_color":"black","comment":"Comment","post_comment":"Post
+ Comment","write_comment":"Write a 
+Comment...","loading_comments":"Loading 
+Comments...","download_original":"View full size <span 
+class=\"photo-size\">{0}<span 
+class=\"photo-size-times\">\u00d7<\/span>{1}<\/span>","no_comment_text":"Please
+ be sure to submit some text with your 
+comment.","no_comment_email":"Please provide an email address to 
+comment.","no_comment_author":"Please provide your name to 
+comment.","comment_post_error":"Sorry, but there was an error posting 
+your comment. Please try again later.","comment_approved":"Your comment 
+was approved.","comment_unapproved":"Your comment is in 
+moderation.","camera":"Camera","aperture":"Aperture","shutter_speed":"Shutter
+ Speed","focal_length":"Focal 
+Length","comment_registration":"0","require_name_email":"1","login_url":"https:\/\/theclevermachine.wordpress.com\/wp-login.php?redirect_to=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F","blog_id":"31505600","local_comments_commenting_as":"<fieldset><label
+ for=\"email\">Email (Required)<\/label> <input type=\"text\" 
+name=\"email\" class=\"jp-carousel-comment-form-field 
+jp-carousel-comment-form-text-field\" 
+id=\"jp-carousel-comment-form-email-field\" 
+\/><\/fieldset><fieldset><label for=\"author\">Name (Required)<\/label> 
+<input type=\"text\" name=\"author\" 
+class=\"jp-carousel-comment-form-field 
+jp-carousel-comment-form-text-field\" 
+id=\"jp-carousel-comment-form-author-field\" 
+\/><\/fieldset><fieldset><label for=\"url\">Website<\/label> <input 
+type=\"text\" name=\"url\" class=\"jp-carousel-comment-form-field 
+jp-carousel-comment-form-text-field\" 
+id=\"jp-carousel-comment-form-url-field\" 
+\/><\/fieldset>","reblog":"Reblog","reblogged":"Reblogged","reblog_add_thoughts":"Add
+ your thoughts here... 
+(optional)","reblogging":"Reblogging...","post_reblog":"Post 
+Reblog","stats_query_args":"blog=31505600&v=wpcom&tz=-8&user_id=0&subd=theclevermachine","is_public":"1","reblog_enabled":""};
+/*
+ ]]> */
+</script>
+<script type="text/javascript">
+/* <![CDATA[ */
+var sharing_js_options = {"lang":"en","counts":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/a"></script><div id="actionbar" class="actnbr-pub-mystique actnbr-has-follow actnbr-hidden"><ul><li class="actnbr-btn actnbr-hidden"> 			    	<a class="actnbr-action actnbr-actn-follow" href=""><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a> 			    	<div class="actnbr-popover tip tip-top-left actnbr-notice"> 			    		<div class="tip-arrow"></div> 			    		<div class="tip-inner actnbr-follow-bubble"></div> 			    	</div> 			    </li><li class="actnbr-ellipsis actnbr-hidden"> 			  <svg class="gridicon gridicon__ellipsis" height="24" width="24" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><circle cx="5" cy="12" r="2"></circle><circle cx="19" cy="12" r="2"></circle><circle cx="12" cy="12" r="2"></circle></g></svg> 			  <div class="actnbr-popover tip tip-top-left actnbr-more"> 			  	<div class="tip-arrow"></div> 			  	<div class="tip-inner"> 				  <ul> 				    <li class="actnbr-sitename actnbr-hidden"><a href="http://theclevermachine.wordpress.com/"><img alt="" src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/9537b168cbd2ad1f6cdaf5e0b56dc5e4.jpeg" class="avatar avatar-50" width="50" height="50"> The Clever Machine</a></li> 				   	<li class="actnbr-folded-customize actnbr-hidden"><a href="https://theclevermachine.wordpress.com/wp-admin/customize.php?url=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F"><svg class="gridicon gridicon__customize" height="20px" width="20px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M2 6c0-1.505.78-3.08 2-4 0 .845.69 2 2 2 1.657 0 3 1.343 3 3 0 .386-.08.752-.212 1.09.74.594 1.476 1.19 2.19 1.81L8.9 11.98c-.62-.716-1.214-1.454-1.807-2.192C6.753 9.92 6.387 10 6 10c-2.21 0-4-1.79-4-4zm12.152 6.848l1.34-1.34c.607.304 1.283.492 2.008.492 2.485 0 4.5-2.015 4.5-4.5 0-.725-.188-1.4-.493-2.007L18 9l-2-2 3.507-3.507C18.9 3.188 18.225 3 17.5 3 15.015 3 13 5.015 13 7.5c0 .725.188 1.4.493 2.007L3 20l2 2 6.848-6.848c1.885 1.928 3.874 3.753 5.977 5.45l1.425 1.148 1.5-1.5-1.15-1.425c-1.695-2.103-3.52-4.092-5.448-5.977z" data-reactid=".2.1.1:0.1b.0"></path></g></svg><span>Customize<span></span></span></a></li> 				    <li class="actnbr-folded-follow actnbr-hidden"><a class="actnbr-action actnbr-actn-follow" href=""><svg class="gridicon gridicon__follow" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g><path d="M23 16v2h-3v3h-2v-3h-3v-2h3v-3h2v3h3zM20 2v9h-4v3h-3v4H4c-1.1 0-2-.9-2-2V2h18zM8 13v-1H4v1h4zm3-3H4v1h7v-1zm0-2H4v1h7V8zm7-4H4v2h14V4z"></path></g></svg><span>Follow</span></a></li> 					<li class="actnbr-signup actnbr-hidden"><a href="https://wordpress.com/start/">Sign up</a></li> 				    <li class="actnbr-login actnbr-hidden"><a href="https://theclevermachine.wordpress.com/wp-login.php?redirect_to=https%3A%2F%2Ftheclevermachine.wordpress.com%2F2012%2F11%2F05%2Fmcmc-the-gibbs-sampler%2F">Log in</a></li> 				     				    <li class="actnbr-shortlink actnbr-hidden"><a href="https://wp.me/p28c2Q-Bw">Copy shortlink</a></li> 				    <li class="flb-report actnbr-hidden"><a href="http://en.wordpress.com/abuse/">Report this content</a></li> 				     				     				    <li class="actnbr-subs actnbr-hidden"><a href="https://subscribe.wordpress.com/">Manage subscriptions</a></li> 				    <li class="actnbr-fold actnbr-hidden"><a href="">Collapse this bar</a></li> 			      </ul> 			    </div> 		      </div> 		    </li> 	      </ul></div>
+<script type="text/javascript">
+// <![CDATA[
+(function() {
+try{
+  if ( window.external &&'msIsSiteMode' in window.external) {
+    if (window.external.msIsSiteMode()) {
+      var jl = document.createElement('script');
+      jl.type='text/javascript';
+      jl.async=true;
+      jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(jl, s);
+    }
+  }
+}catch(e){}
+})();
+// ]]>
+</script>		<iframe src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/master.html" scrolling="no" id="likes-master" name="likes-master" style="display:none;"></iframe>
+		<div id="likes-other-gravatars"><div class="likes-text"><span>%d</span> bloggers like this:</div><ul class="wpl-avatars sd-like-gravatars"></ul></div>
+<script src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/w.js" type="text/javascript" async="" defer="defer"></script>
+<script type="text/javascript">
+_tkq = window._tkq || [];
+_stq = window._stq || [];
+_tkq.push(['storeContext', 
+{'blog_id':'31505600','blog_tz':'-8','user_lang':'en','blog_lang':'en','user_id':'0'}]);
+_stq.push(['view',
+ 
+{'blog':'31505600','v':'wpcom','tz':'-8','user_id':'0','post':'2326','subd':'theclevermachine'}]);
+_stq.push(['extra',
+ 
+{'crypt':'UE5XaGUuOTlwaD85flAmcm1mcmZsaDhkV11YdTdvUG14Q2VDQTR4LlUsLi82dU1mai9BMkM9QjRQOXBLb118OUp+ODNQL2IuMTRlSUNNWUR8SWtMY2dLbV1RLWJLQ0JaPXRPdGpiTGJONVV0NVNIdy9dQzBaZlhDX2pdXUZyQ1MxYlVBUjYwV2xxazBIS2oyVmx0eF15RT95NVFUeDc9UXdYMysubiY1QXJOKz1GdUFJTkJSc0RROXhWcV1bYWY/RiZdZ1RJTjhlNnFuWEVUTzFTJnpLc09obmdoZ2JHZmtwOXIvZFNPU21OSD8rNWYzOVU/dW44R2g4V3YlRVVTM2UwMyZDaXdIdGU5ZWFTLExYOCxNZVZ8XU9uJWVLfC5fWUowd0U3TiZpSFBr'}]);
+_stq.push([
+ 'clickTrackerInit', '31505600', '2326' ]);
+	</script>
+<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:0px;width:0px;overflow:hidden" alt="" /></noscript>
+<script>
+if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+	wpcom_mobile_user_agent_info.init();
+	var mobileStatsQueryString = "";
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + 
+wpcom_mobile_user_agent_info.matchedPlatformName;
+	
+	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + 
+wpcom_mobile_user_agent_info.matchedUserAgentName;
+	
+	if( wpcom_mobile_user_agent_info.isIPad() )
+		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+	if( "" != mobileStatsQueryString ) {
+		new Image().src = document.location.protocol + 
+'//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba='
+ + Math.random();
+	}
+	
+}
+</script>
+
+<img src="MCMC:%20The%20Gibbs%20Sampler%20|%20The%20Clever%20Machine_files/g.gif" alt=":)" id="wpstats"></body></html>
