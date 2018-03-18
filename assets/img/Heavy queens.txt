@@ -1,0 +1,50 @@
+Heavy queens (Total: 100) 
+
+A*: 40
+Documentation -- 7
+Score: 7
+
+Performance (how well does it do) 
+- sample problem, low complexity  9 				
+Score: 9
+
+- Harder problem:  12
+Score: 10
+It's running okay, but take too long to solve a 6-queen and 8 queen.
+
+- Is solution appropriate (A* should be near optimal, greedy hill climbing should make sense)  12
+Score: 10 
+Not correct to calculate the branching factor in A*. 
+
+
+
+Hill Climbing: 40
+Documentation -- 7
+Score: 7
+
+Performance (how well does it do) 
+- sample problem, low complexity  9 				
+Score: 9
+
+- Harder problem:  12
+Score: 12
+
+- Is solution appropriate (A* should be near optimal, greedy hill climbing should make sense)  12
+Score: 12
+
+
+
+Writeup:  20
+Q1: 5
+Q2: 1
+Q3: 5
+Q4: 5
+Score: 16
+The calculation about the effective branching factor is not correct. For hill climbing, I did not get results you put in the write up. 
+
+Total: 92
+
+		
+
+
+

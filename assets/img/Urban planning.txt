@@ -1,0 +1,42 @@
+Urban planning	(Total: 150)
+
+Hill Climbing: 49
+Documentation --  7 
+Score: 7
+
+low complexity where you know answer - Does program run and give sensible output?  10
+Score: 8
+It runs okay, but the final result is not good enough. 
+
+Harder problem:  should do “ok”  15
+Score: 12
+Again the performance is not good enough 
+
+Is solution appropriate (urban planning should have good map)  17
+Score:  13
+Adding some comments please. Some of the naming are not informative. 
+The major issue is the  performance of the program. I still figure out what cause the below-average performance. It might be the representation and scoring. This is consistent with genetic algorithm. 
+
+Genetic Algorithm: 49
+Documentation --  7 
+Score: 7
+
+low complexity where you know answer - Does program run and give sensible output?  10
+Score: 8
+
+Harder problem:  should do “ok”  15
+Score: 12
+
+Is solution appropriate (urban planning should have good map)  17
+Score: 13
+Same reason as the above 
+
+Writeup:  52
+Score: 52
+
+
+
+Total: 132
+Scaled: 105.6
+
+
